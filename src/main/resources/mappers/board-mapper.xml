@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Board">
+    <!-- SQL to get all boards -->
+    <select id="getBoardList" resultType="board">
+        SELECT * FROM PERFORMANCE ORDER BY bid DESC
+    </select>
+
+    <!-- SQL to get a single board by id -->
+    <select id="getBoard" resultType="board">
+        SELECT * FROM PERFORMANCE WHERE bid = #{id}
+    </select>
+
+    <!-- SQL to insert a board -->
+    <insert id="insertBoard">
+        INSERT INTO PERFORMANCE
+        (prfnm, prfpdfrom, prfpdto, fcltynm, prfcast, prfruntime, prfage, pcseguidance, poster)
+        VALUES
+            (#{prfnm}, #{prfpdfrom}, #{prfpdto}, #{fcltynm}, #{prfcast}, #{prfruntime}, #{prfage}, #{pcseguidance}, #{poster})
+    </insert>
+
+    <!-- SQL to update a board -->
+    <update id="updateBoard">
+        UPDATE PERFORMANCE SET
+                               prfnm=#{prfnm}, prfpdfrom=#{prfpdfrom}, prfpdto=#{prfpdto},
+                               fcltynm=#{fcltynm}, prfcast=#{prfcast}, prfruntime=#{prfruntime},
+                               prfage=#{prfage}, pcseguidance=#{pcseguidance}, poster=#{poster}
+        WHERE bid=#{bid}
+    </update>
+
+    <!-- SQL to delete a board -->
+    <delete id="deleteBoard">
+        DELETE FROM PERFORMANCE WHERE bid = #{id}
+    </delete>
+
+</mapper>
