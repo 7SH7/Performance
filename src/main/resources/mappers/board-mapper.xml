@@ -14,9 +14,9 @@
     <!-- SQL to insert a board -->
     <insert id="insertBoard">
         INSERT INTO PERFORMANCE
-        (prfnm, prfpdfrom, prfpdto, fcltynm, prfcast, prfruntime, prfage, pcseguidance, poster)
+        (prfnm, prfpdfrom, prfpdto, fcltynm, prfcast, prfruntime, prfage, pcseguidance, poster, agerange, ispost, location)
         VALUES
-            (#{prfnm}, #{prfpdfrom}, #{prfpdto}, #{fcltynm}, #{prfcast}, #{prfruntime}, #{prfage}, #{pcseguidance}, #{poster})
+            (#{prfnm}, #{prfpdfrom}, #{prfpdto}, #{fcltynm}, #{prfcast}, #{prfruntime}, #{prfage}, #{pcseguidance}, #{poster}, #{agerange}, #{doimage}, #{location})
     </insert>
 
     <!-- SQL to update a board -->
@@ -24,7 +24,8 @@
         UPDATE PERFORMANCE SET
                                prfnm=#{prfnm}, prfpdfrom=#{prfpdfrom}, prfpdto=#{prfpdto},
                                fcltynm=#{fcltynm}, prfcast=#{prfcast}, prfruntime=#{prfruntime},
-                               prfage=#{prfage}, pcseguidance=#{pcseguidance}, poster=#{poster}
+                               prfage=#{prfage}, pcseguidance=#{pcseguidance}, poster=#{poster},
+                               location=#{location}, ispost=#{doimage}, agerange=#{agerange}
         WHERE bid=#{bid}
     </update>
 

@@ -77,14 +77,14 @@
         </div>
 
         <div class="form-group row">
-            <label for="ispost" class="col-sm-2 col-form-label">포스터</label>
+            <label for="doimg" class="col-sm-2 col-form-label">포스터</label>
             <div class="col-sm-10">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="ispost0" value="0" name="ispost" ${u.getPoster() == 0 ? 'checked' : ''}>
+                    <input class="form-check-input" type="checkbox" id="ispost0" value="0" name="doimg" ${u.getDoimage() == 0 ? 'checked' : ''}>
                     <label class="form-check-label" for="ispost0">O</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="ispost1" value="1" name="ispost" ${u.getPoster() == 1 ? 'checked' : ''}>
+                    <input class="form-check-input" type="checkbox" id="ispost1" value="1" name="doimg" ${u.getDoimage() == 1 ? 'checked' : ''}>
                     <label class="form-check-label" for="ispost1">X</label>
                 </div>
             </div>
