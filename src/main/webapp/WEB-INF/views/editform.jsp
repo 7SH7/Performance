@@ -80,6 +80,59 @@
 			</div>
 		</div>
 
+		<%--		--%>
+		<div class="form-group row">
+			<label for="location" class="col-sm-2 col-form-label">지역</label>
+			<div class="col-sm-10">
+				<select name="location" id="location" class="form-control">
+					<option value="">-- 지역을 선택하세요 --</option>
+					<option value="강원도" ${u.getLocation() == '강원도' ? 'selected' : ''}>강원도</option>
+					<option value="경기도" ${u.getLocation() == '경기도' ? 'selected' : ''}>경기도</option>
+					<option value="충청도" ${u.getLocation() == '충청도' ? 'selected' : ''}>충청도</option>
+					<option value="전라도" ${u.getLocation() == '전라도' ? 'selected' : ''}>전라도</option>
+					<option value="경상도" ${u.getLocation() == '경상도' ? 'selected' : ''}>경상도</option>
+					<option value="제주도" ${u.getLocation() == '제주도' ? 'selected' : ''}>제주도</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="ispost" class="col-sm-2 col-form-label">포스터</label>
+			<div class="col-sm-10">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="ispost0" value="0" name="ispost" ${u.getDoimage() == 0 ? 'checked' : ''}>
+					<label class="form-check-label" for="ispost0">O</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="ispost1" value="1" name="ispost" ${u.getDoimage() == 1 ? 'checked' : ''}>
+					<label class="form-check-label" for="ispost1">X</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="agerange" class="col-sm-2 col-form-label">나이 범위</label>
+			<div class="col-sm-10">
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" id="agerange1" value="10대~20대" name="agerange" ${u.getAgerange() == '10대~20대' ? 'checked' : ''}>
+					<label class="form-check-label" for="agerange1">10대~20대</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" id="agerange2" value="30대~40대" name="agerange" ${u.getAgerange() == '30대~40대' ? 'checked' : ''}>
+					<label class="form-check-label" for="agerange2">30대~40대</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" id="agerange3" value="50대~" name="agerange" ${u.getAgerange() == '50대~' ? 'checked' : ''}>
+					<label class="form-check-label" for="agerange3">50대~</label>
+				</div>
+			</div>
+		</div>
+
+
+
+		<%--		--%>
+
+
 		<div class="form-group row">
 			<div class="col-sm-10">
 				<button type="button" class="btn btn-danger" onclick="history.back()">취소</button>
