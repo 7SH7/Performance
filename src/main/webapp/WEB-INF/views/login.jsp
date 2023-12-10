@@ -28,12 +28,26 @@
             background-color: #218838;
         }
     </style>
+    <script>
+        function validateForm() {
+            var userid = document.getElementById('userid').value;
+            var password = document.getElementById('password').value;
+
+            if (userid !== 'root' || password !== '1234') {
+                alert('잘못 입력하셨습니다');
+                location.reload();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card login-card">
         <div class="card-body">
-            <form method="post" action="loginOk">
+            <form method="post" action="loginOk" onsubmit="return validateForm()">
                 <h2 class="card-title text-center mb-4">🎭 공연 정보 서비스</h2>
                 <div class="mb-3">
                     <label for="userid" class="form-label">User ID</label>
